@@ -18,6 +18,10 @@ public class Notification {
     private static final String ACTION_REMOTE = "action_remote";
     private static final String REMOTE_RESULT_KEY = "remote_result";
 
+    public static String getRemoteResultKey() {
+        return REMOTE_RESULT_KEY;
+    }
+
     private static void createChannel(){
         NotificationManager manager =
                 (NotificationManager)App.context().getSystemService(Context.NOTIFICATION_SERVICE);
