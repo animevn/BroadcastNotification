@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BroadcastReceiverNotification</string>
+    <string name="bnNotify">Notify</string>
+    <string name="tvReply">Waiting for reply</string>
+    <string name="bnUpdate">Update</string>
+    <string name="bnCancel">Cancel</string>
 </resources>
