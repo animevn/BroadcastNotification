@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+
+//this broadcast is needed solely for remoteinput, without remoteinput, this class can be disposed.
 public class Broadcast extends BroadcastReceiver {
 
     private BroadcastObserver listener;

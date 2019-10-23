@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.os.Build;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.RemoteInput;
+import androidx.core.app.NotificationCompat.BigPictureStyle;
 
 public class Notification {
 
@@ -17,6 +18,10 @@ public class Notification {
     private static final int REQUEST = 1979;
     private static final String ACTION_REMOTE = "action_remote";
     private static final String REMOTE_RESULT_KEY = "remote_result";
+
+    public static String getActionRemote() {
+        return ACTION_REMOTE;
+    }
 
     public static String getRemoteResultKey() {
         return REMOTE_RESULT_KEY;
@@ -58,14 +63,14 @@ public class Notification {
     }
 
     private static NotificationCompat.Builder createBuilder(){
-        return new NotificationCompat.Builder(App.context(), CHANNEL_ID)
+        return new NotificationCompat
+                .Builder(App.context(), CHANNEL_ID)
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setAutoCancel(true)
                 .setContentIntent(createOpenMainIntent())
                 .setSmallIcon(R.drawable.star)
                 .setContentTitle("Too much")
-                .addAction(createRemoteInput())
                 .setContentText("text content");
     }
 
@@ -73,8 +78,21 @@ public class Notification {
         NotificationManager manager =
                 (NotificationManager)App.context().getSystemService(Context.NOTIFICATION_SERVICE);
         createChannel();
-        if (!App.isAppVisible() && manager != null){
-            manager.notify(id, createBuilder().build());
+        NotificationCompat.Builder builder = createBuilder();
+        builder.addAction(createRemoteInput());
+        if (manager != null){
+            manager.notify(id, builder.build());
+        }
+    }
+
+    public static void updateNotification(int id, BigPictureStyle style){
+        NotificationManager manager =
+                (NotificationManager)App.context().getSystemService(Context.NOTIFICATION_SERVICE);
+        createChannel();
+        NotificationCompat.Builder builder = createBuilder();
+        builder.setStyle(style);
+        if (manager != null){
+            manager.notify(id, builder.build());
         }
     }
 }
