@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BroadcastReceiverNotification</string>
+    <string name="app_name">Broadcast Receiver Notification</string>
     <string name="bnNotify">Notify</string>
     <string name="tvReply">Waiting for reply</string>
     <string name="bnUpdate">Update</string>
