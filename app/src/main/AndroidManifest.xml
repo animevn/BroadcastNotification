@@ -6,7 +6,6 @@
     <dist:module dist:instant="true" />
 
     <application
-        android:name=".App"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/icon"
@@ -22,12 +21,6 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".Broadcast"
-            android:enabled="true"
-            android:exported="false"
-            >
-        </receiver>
     </application>
 
 </manifest>
