@@ -1,4 +1,4 @@
-package com.haanhgs.broadcastdemo;
+package com.haanhgs.broadcastnotification;
 
 import android.app.RemoteInput;
 import android.content.BroadcastReceiver;

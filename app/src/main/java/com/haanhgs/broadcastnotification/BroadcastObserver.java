@@ -1,4 +1,4 @@
-package com.haanhgs.broadcastdemo;
+package com.haanhgs.broadcastnotification;
 
 public interface BroadcastObserver {
     void onBroadcastReceive(CharSequence charSequence);

@@ -1,4 +1,4 @@
-package com.haanhgs.broadcastdemo;
+package com.haanhgs.broadcastnotification;
 
 import android.app.NotificationManager;
 import android.content.IntentFilter;
